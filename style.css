@@ -1,138 +1,117 @@
-/* ====== GENERAL ====== */
+/* ===== GENERAL STYLES ===== */
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  padding: 0;
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
   color: #333;
 }
 
-a { text-decoration: none; }
-
-/* ====== NAVBAR ====== */
+/* NAVBAR */
 nav {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background-color: rgba(255,255,255,0.8);
 }
-
 nav a {
-  color: #4b1ea0;
-  font-weight: 600;
-  padding: 8px 15px;
-  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #4b0082;
   transition: 0.3s;
 }
-
 nav a:hover, nav a.active {
-  background: #4b1ea0;
-  color: white;
+  color: #ff69b4;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.hero .btn {
+  padding: 10px 25px;
+  background-color: #ff69b4;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hero .btn:hover {
+  background-color: #4b0082;
   transform: scale(1.05);
 }
 
-/* ====== HEADER ====== */
-header {
-  text-align: center;
-  padding: 80px 20px 40px;
-  color: #fff;
-}
-
-header h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-}
-
-header p { font-size: 1.2rem; }
-
-/* ====== SECTIONS ====== */
-section { text-align: center; padding: 50px 20px; }
-
-/* ====== PROJECTS ====== */
+/* PROJECTS */
 .projects-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
-
 .project-card {
-  background: rgba(255,255,255,0.85);
+  background-color: rgba(255,255,255,0.9);
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  width: 280px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
-  animation-delay: 0.3s;
-}
-
-.project-card:nth-child(2) { animation-delay: 0.5s; }
-
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 3px solid #a978f2;
-}
-
-.project-card h3 {
-  color: #4b1ea0;
-  padding: 15px;
-  margin: 0;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-}
-
-/* ====== FADE-IN ANIMATION ====== */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ====== CONTACT FORM ====== */
-form input, form textarea {
-  padding: 12px;
-  width: 80%;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-form button {
-  padding: 12px 30px;
-  background: linear-gradient(90deg, #7b1fa2, #ce93d8);
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+  width: 300px;
+  text-align: center;
   transition: 0.3s;
 }
-
-form button:hover {
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+.project-card:hover img {
   transform: scale(1.05);
-  background: linear-gradient(90deg, #ce93d8, #7b1fa2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.project-card h3 {
+  padding: 15px 0;
+  color: #4b0082;
 }
 
-/* ====== FOOTER ====== */
+/* FOOTER / CONTACT */
 footer {
   text-align: center;
   padding: 20px;
-  font-size: 0.9rem;
-  color: #fff;
-  background: #7b1fa2;
-  margin-top: 50px;
+  background-color: rgba(255,255,255,0.8);
+}
+footer hr {
+  margin: 20px auto;
+  width: 50%;
+  border: 1px solid #4b0082;
+}
+footer .socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #4b0082;
+  transition: 0.3s;
+}
+footer .socials a:hover {
+  color: #ff69b4;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .projects-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
